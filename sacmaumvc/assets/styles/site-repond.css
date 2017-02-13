@@ -1,0 +1,303 @@
+﻿/*========================reponsite===============================================================================*/
+ .desktop-showhide, .desktop-992
+ {
+     display: block;
+ }
+ .mobile-showhide, .ipadmo-992
+ {
+     display: none;
+ }
+ .menu-sroll
+ {
+    -webkit-box-shadow: 0 3px 5px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    0 3px 5px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         0 3px 5px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+     position: fixed;
+     z-index: 9997;
+ }
+ /* Large desktop */
+@media (min-width: 1200px)
+{
+    
+}
+@media (min-width: 993px) and (max-width: 1199px)
+{
+    #header .logo {
+        width: 180px;
+    }
+    .sologan {
+        width: 320px;
+    }
+    .hotline {
+        background-position: left bottom;
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 0;
+    }
+    .list-hotline {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    #menu > li > a {
+        font-size: 15px;
+        line-height: 44px;
+        padding: 0 10px;
+    }
+    #menu li li a {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    #menu ul {
+        width: 210px;
+    }
+    #header .form-search {
+        margin-top: 6px;
+    }
+    /*==================*/
+    #colContent {
+        width: 640px;
+    }
+    .detail-images {
+        width: 45%;
+    }
+    .protb-none .product-name a {
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+@media (min-width: 993px)
+{
+}
+@media (max-width: 992px)
+{
+    .desktop-992 {
+        display: none;
+    }
+    .ipadmo-992 {
+        display: block;
+    }
+    #header .form-search {
+        margin-top: 4px;
+    }
+    .hotline {
+        background-position: left bottom;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 0;
+    }
+    .list-hotline {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    /*==================*/
+    #colAside, #colContent {
+        float:none;
+        padding: 15px 0;
+        width: 100%;
+    }
+    .slider-text {
+        margin-bottom: 0;
+    }
+    #footer .logo {
+        margin: 0 auto;
+    }
+    .detail-images {
+        width: 46%;
+    }
+
+}
+@media (min-width: 769px)
+{
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 992px)
+{
+    
+    #header .logo {
+        width: 130px;
+    }
+    .sologan {
+        width: 205px;
+    }
+    .protb-none .product-name a {
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px)
+{
+     .desktop-showhide
+     {
+         display: none !important;
+     }
+     .mobile-showhide
+     {
+         display: block !important;
+     }
+    .aside-box {
+        margin-bottom: 20px;
+    }
+    .adv-box {
+        padding: 15px;
+    }
+    .wrap-footer .share-w {
+        float: none;
+        padding: 10px 0;
+        width: 100%;
+    }
+    .share-w a {
+        margin-right: 5px;
+    }
+    .copyright {
+        text-align: center;
+    }
+    .wrap-images .detailimg-desktop {
+        position: absolute;
+        opacity: 0;
+	    filter:alpha(opacity=0); 
+        z-index: -1;
+    }
+    .wrap-images .detailimg-mobile {
+        position: relative;
+        opacity: 1;
+	    filter:alpha(opacity=100); 
+        z-index: 1;
+    }
+    .text-box {
+        font-size: 15px;
+        line-height: 20px;
+        padding: 10px;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px)
+{
+}
+@media (min-width: 640px) and (max-width: 767px)
+{
+    .hotline {
+        font-size: 11px;
+        line-height: 16px;
+    }
+    .list-hotline {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+@media (max-width: 639px)
+{
+    #header .logo {
+        margin: 0 auto;
+        width: 120px;
+    }
+    .header-top {
+        padding: 6px 0;
+    }
+    .header-top .col-xs-6 {
+        width: 100%;
+    }
+    .hotline-w {
+        display: none;
+    }
+    .wrapper-menu {
+        background: #1c9600;
+    }
+    #header .form-search, #header .form-search .search-text {
+        background-color: #1c9600;
+    }
+    #header .form-search {
+        float: left;
+        width: 200px;
+    }
+    .menu-mo {
+        float: right;
+    }
+    #header .form-search .search-btn {
+        background-position: left bottom;
+        float: left;
+    }
+    #header .form-search .search-text {
+        color: #ededed;
+        font-size: 13px;
+    }
+    #header .form-search .search-input {
+        padding: 0;
+    }
+    .product-tb .col-xs-4  {
+        width: 50%;
+    }
+    .aside-row .col-xs-6 {
+        width: 100%;
+    }
+    .aside-box {
+        padding: 0 10px;
+    }
+    .adv-box {
+        padding: 15px;
+    }
+    .menu-list li a {
+        padding-left: 12px;
+    }
+    .menu-list li li {
+        margin-left: 12px;
+    }
+    .detail-images {
+        float: none;
+        margin: 0 auto;
+        width: 360px;
+    }
+    .details-content {
+        padding: 10px 0;
+        width: 100%;
+    }
+        .details-content .product-name {
+            font-size: 16px;
+            line-height: 24px;
+        }
+        .details-content .product-code {
+            font-size: 13px;
+            line-height: 20px;
+        }
+    #footer h4 {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 5px;
+    }
+    .list-address li {
+        padding-left: 25px;
+    }
+}
+@media (max-width: 479px)
+{
+    .product-box, .product-name a {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .title, .head-bg {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+        .head-bg .title-in {
+            font-size: 16px;
+        }
+    .protb-none .col-xs-6 {
+        width: 100%;
+    }
+}
+@media (max-width: 419px)
+{
+    
+    .detail-images {
+        width: 100%;
+    }
+}
+@media (max-width: 359px)
+{
+    .product-box, .product-name a {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media (max-width: 319px)
+{
+}

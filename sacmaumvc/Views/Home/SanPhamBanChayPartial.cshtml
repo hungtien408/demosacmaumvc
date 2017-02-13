@@ -1,0 +1,12 @@
+﻿@using sacmaumvc.Models;
+@model List<Product>
+@foreach (var item in Model)
+{
+    <div class="slide">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="@Url.Content("~/res/product/" + item.ImageName)" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">@item.ProductName</a></h4>
+            <div class="product-code">Mã số : @item.Tag</div>
+        </div>
+    </div>
+}

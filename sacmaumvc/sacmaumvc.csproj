@@ -1,0 +1,847 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B9F51D3-91AB-4A06-8F00-75F4EE8E84F5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sacmaumvc</RootNamespace>
+    <AssemblyName>sacmaumvc</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GridMvc">
+      <HintPath>..\packages\Grid.Mvc.3.0.0\lib\net40\GridMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ad\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="ad\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ad\assets\images\bx_loader.gif" />
+    <Content Include="ad\assets\images\control-b2.png" />
+    <Content Include="ad\assets\images\controls.png" />
+    <Content Include="ad\assets\images\header-bg.jpg" />
+    <Content Include="ad\assets\images\icon-1.png" />
+    <Content Include="ad\assets\images\icon-logo.png" />
+    <Content Include="ad\assets\images\icon-search.png" />
+    <Content Include="ad\assets\images\logo.png" />
+    <Content Include="ad\assets\images\logo2.png" />
+    <Content Include="ad\assets\images\logoall.png" />
+    <Content Include="ad\assets\images\menu-bg.png" />
+    <Content Include="ad\assets\images\pager-slider.png" />
+    <Content Include="ad\assets\js\bootstrap.min.js" />
+    <Content Include="ad\assets\js\cloud-zoom.js" />
+    <Content Include="ad\assets\js\google-maps.js" />
+    <Content Include="ad\assets\js\hoverIntent.js" />
+    <Content Include="ad\assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="ad\assets\js\isotope.pkgd.min.js" />
+    <Content Include="ad\assets\js\jquery.bgbox.js" />
+    <Content Include="ad\assets\js\jquery.bxslider.min.js" />
+    <Content Include="ad\assets\js\jquery.easing.1.3.js" />
+    <Content Include="ad\assets\js\jquery.js" />
+    <Content Include="ad\assets\js\jquery.main.js" />
+    <Content Include="ad\assets\js\jquery.main.min.js" />
+    <Content Include="ad\assets\js\jquery.menu.level.js" />
+    <Content Include="ad\assets\js\jquery.panel.mobile.js" />
+    <Content Include="ad\assets\js\jquery.textheight.js" />
+    <Content Include="ad\assets\js\jquery.uniform.min.js" />
+    <Content Include="ad\assets\js\slick.min.js" />
+    <Content Include="ad\assets\js\superfish.js" />
+    <Content Include="ad\assets\styles\bootstrap.min.css" />
+    <Content Include="ad\assets\styles\cloud-zoom.css" />
+    <Content Include="ad\assets\styles\font-awesome.min.css" />
+    <Content Include="ad\assets\styles\ie7.css" />
+    <Content Include="ad\assets\styles\jquery.bxslider.css" />
+    <Content Include="ad\assets\styles\jquery.simplyscroll.css" />
+    <Content Include="ad\assets\styles\nivo-slider.css" />
+    <Content Include="ad\assets\styles\site-repond.css" />
+    <Content Include="ad\assets\styles\site.css" />
+    <Content Include="ad\assets\styles\slick.css" />
+    <Content Include="ad\assets\styles\uniform-base.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\about-img.jpg" />
+    <Content Include="assets\images\adv-img-1.jpg" />
+    <Content Include="assets\images\banner-img-1.jpg" />
+    <Content Include="assets\images\banner-img-2.jpg" />
+    <Content Include="assets\images\banner-img-3.jpg" />
+    <Content Include="assets\images\banner-img-4.jpg" />
+    <Content Include="assets\images\banner-img-5.jpg" />
+    <Content Include="assets\images\bx_loader.gif" />
+    <Content Include="assets\images\control-b2.png" />
+    <Content Include="assets\images\controls.png" />
+    <Content Include="assets\images\details-big-1.jpg" />
+    <Content Include="assets\images\details-big-2.jpg" />
+    <Content Include="assets\images\details-big-3.jpg" />
+    <Content Include="assets\images\details-big-4.jpg" />
+    <Content Include="assets\images\details-big-5.jpg" />
+    <Content Include="assets\images\details-img-1.jpg" />
+    <Content Include="assets\images\details-img-2.jpg" />
+    <Content Include="assets\images\details-img-3.jpg" />
+    <Content Include="assets\images\details-img-4.jpg" />
+    <Content Include="assets\images\details-img-5.jpg" />
+    <Content Include="assets\images\details-small-1.jpg" />
+    <Content Include="assets\images\details-small-2.jpg" />
+    <Content Include="assets\images\details-small-3.jpg" />
+    <Content Include="assets\images\details-small-4.jpg" />
+    <Content Include="assets\images\details-small-5.jpg" />
+    <Content Include="assets\images\header-bg.jpg" />
+    <Content Include="assets\images\icon-1.png" />
+    <Content Include="assets\images\icon-logo.png" />
+    <Content Include="assets\images\icon-search.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\logo2.png" />
+    <Content Include="assets\images\logoall.png" />
+    <Content Include="assets\images\menu-bg.png" />
+    <Content Include="assets\images\pager-slider.png" />
+    <Content Include="assets\images\product-img-1.jpg" />
+    <Content Include="assets\images\product-img-2.jpg" />
+    <Content Include="assets\images\product-img-3.jpg" />
+    <Content Include="assets\images\product-img-4.jpg" />
+    <Content Include="assets\images\product-img-5.jpg" />
+    <Content Include="assets\images\sologan.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\cloud-zoom.js" />
+    <Content Include="assets\js\google-maps.js" />
+    <Content Include="assets\js\hoverIntent.js" />
+    <Content Include="assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="assets\js\isotope.pkgd.min.js" />
+    <Content Include="assets\js\jquery.bgbox.js" />
+    <Content Include="assets\js\jquery.bxslider.min.js" />
+    <Content Include="assets\js\jquery.easing.1.3.js" />
+    <Content Include="assets\js\jquery.js" />
+    <Content Include="assets\js\jquery.main.js" />
+    <Content Include="assets\js\jquery.main.min.js" />
+    <Content Include="assets\js\jquery.menu.level.js" />
+    <Content Include="assets\js\jquery.panel.mobile.js" />
+    <Content Include="assets\js\jquery.textheight.js" />
+    <Content Include="assets\js\jquery.uniform.min.js" />
+    <Content Include="assets\js\slick.min.js" />
+    <Content Include="assets\js\superfish.js" />
+    <Content Include="assets\styles\bootstrap.min.css" />
+    <Content Include="assets\styles\cloud-zoom.css" />
+    <Content Include="assets\styles\font-awesome.min.css" />
+    <Content Include="assets\styles\ie7.css" />
+    <Content Include="assets\styles\jquery.bxslider.css" />
+    <Content Include="assets\styles\jquery.simplyscroll.css" />
+    <Content Include="assets\styles\nivo-slider.css" />
+    <Content Include="assets\styles\site-repond.css" />
+    <Content Include="assets\styles\site.css" />
+    <Content Include="assets\styles\slick.css" />
+    <Content Include="assets\styles\uniform-base.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Gridmvc.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="res\advertisement\3.jpg" />
+    <Content Include="res\advertisement\6.jpg" />
+    <Content Include="res\article\giay-dan-tuong-phong-ngu-2.jpg" />
+    <Content Include="res\article\giay-dan-tuong-phong-ngu-3.jpg" />
+    <Content Include="res\article\thumbs\giay-dan-tuong-phong-ngu-2.jpg" />
+    <Content Include="res\article\thumbs\giay-dan-tuong-phong-ngu-3.jpg" />
+    <Content Include="res\product\album\196C9CE8.jpg" />
+    <Content Include="res\product\album\1FE522F8.jpg" />
+    <Content Include="res\product\album\9E52C524.jpg" />
+    <Content Include="res\product\album\thumbs\196C9CE8.jpg" />
+    <Content Include="res\product\album\thumbs\1FE522F8.jpg" />
+    <Content Include="res\product\album\thumbs\9E52C524.jpg" />
+    <Content Include="res\product\ghe-van-phong-ultrices-1.jpg" />
+    <Content Include="res\product\ghe-van-phong-ultrices-2.jpg" />
+    <Content Include="res\product\thumbs\ghe-van-phong-ultrices-1.jpg" />
+    <Content Include="res\product\thumbs\ghe-van-phong-ultrices-2.jpg" />
+    <Content Include="res\Temp\adv-img-1.jpg" />
+    <Content Include="res\userprofile\userprofile.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\gridmvc.js" />
+    <Content Include="Scripts\gridmvc.lang.ru.js" />
+    <Content Include="Scripts\gridmvc.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.9.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.0.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminProductController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AddressBook.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AddressBook1.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdsBanner.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdsCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Article.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArticleCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Applications.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Membership.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Membership_GetPasswordWithFormat_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Membership_GetPassword_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Membership_GetUserByName_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Membership_GetUserByUserId_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Paths.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_PersonalizationAllUsers.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_PersonalizationPerUser.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Profile.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Profile_GetProperties_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Roles.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_SchemaVersions.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Users.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_UsersInRoles_RemoveUsersFromRoles_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_WebEvent_Events.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Career.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CareerCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeliveryMethod.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\District.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Download.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DownloadCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Manufacturer.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Manufacturer1.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Menu.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuPosition.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelAdsBanner.cs" />
+    <Compile Include="Models\Newsletter.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderStatu.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Origin.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Partner.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentMethod.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayStatu.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhotoAlbum.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhotoAlbumCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductDownload.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImage.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductLength.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductOfSame.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductOption.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductOptionCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductSizeColor.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectDownload.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectImage.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectVideo.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Province.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rating.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SacMauModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SacMauModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SacMauModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SacMauModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SacMauModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShippingStatu.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ufn_ChildArticleCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ufn_ChildCareerCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ufn_ChildProductCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ufn_ChildProductOptionCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ufn_ChildProjectCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ufn_ChildServiceCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ufn_RelatedProductCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProfile.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_AddressBook1_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_AddressBook_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_AdsBanner_SelectOne1_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_AdsBanner_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_AdsCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_AdsCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ArticleCategoryForEdit_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ArticleCategoryHierarchyToTop_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ArticleCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ArticleCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Article_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_CareerCategoryForEdit_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_CareerCategoryHierarchyToTop_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_CareerCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_CareerCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Career_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Comment_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Country_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_DeliveryMethods_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_District_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_DownloadCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Download_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ExchangeRate_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Manufacturer_SelectOne1_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Manufacturer_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_MenuForEdit_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_MenuPosition_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Menu_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_OrderDetail_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_OrderStatus_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Orders_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Origin_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Partner_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_PaymentMethod_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_PayStatus_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_PhotoAlbumCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_PhotoAlbum_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductCategoryForEdit_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductCategoryHierarchyToTop_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductDownload_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductImage_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductLength_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductOfSame_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductOfSame_SelectSame_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductOptionCategoryForEdit_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductOptionCategoryHierarchyToTop_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductOptionCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductOptionCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductOption_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProductSizeColor_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Product_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProjectCategoryForEdit_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProjectCategoryHierarchyToTop_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProjectCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProjectCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProjectDownload_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProjectImage_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ProjectVideo_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Project_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Province_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Rating_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ServiceCategoryForEdit_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ServiceCategoryHierarchyToTop_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ServiceCategory_SelectAll_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ServiceCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Service_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_ShippingStatus_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_UserProfile_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_VideoCategory_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Video_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_Visitor_Edit_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_WishList_SelectOne_Result.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Video.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VideoCategory.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Visitor.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_Applications.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_MembershipUsers.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_Profiles.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_Roles.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_Users.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_UsersInRoles.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_WebPartState_Paths.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_WebPartState_Shared.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_aspnet_WebPartState_User.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WishList.cs">
+      <DependentUpon>SacMauModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Layout\_LayoutPage.cshtml" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\GioiThieu.cshtml" />
+    <Content Include="res\article\thumbs\vssver2.scc" />
+    <Content Include="res\product\album\vssver2.scc" />
+    <Content Include="res\TempAsync\RadUploadTestFile" />
+    <Content Include="res\TempAsync\vssver2.scc" />
+    <Content Include="Views\Home\ListBanner.cshtml" />
+    <EntityDeploy Include="Models\SacMauModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SacMauModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SacMauModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SacMauModel.edmx</DependentUpon>
+      <LastGenOutput>SacMauModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SacMauModel.edmx.diagram">
+      <DependentUpon>SacMauModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\SacMauModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SacMauModel.edmx</DependentUpon>
+      <LastGenOutput>SacMauModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\SanPhamBanChayPartial.cshtml" />
+    <Content Include="ad\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="ad\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="ad\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="ad\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="ad\assets\fonts\FontAwesome.otf" />
+    <Content Include="ad\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="ad\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="ad\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="ad\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Layout\_LayoutAdminPage.cshtml" />
+    <Content Include="Views\Shared\_GridPager.cshtml" />
+    <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Grid.mvc.readme" />
+    <Content Include="Scripts\jquery-1.9.0.min.map" />
+    <Content Include="Views\AdminProduct\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1287</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1287/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

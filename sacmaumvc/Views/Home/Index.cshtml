@@ -1,0 +1,121 @@
+﻿@using sacmaumvc.Models;
+@{
+    ViewBag.Title = "SM";
+    Layout = "~/Views/Layout/_LayoutPage.cshtml";
+    var lstBanner = ViewBag.ListBanner as List<AdsBanner>;
+    var lstSanPhamBanChay = ViewBag.ListSanPhamBanChay as List<Product>;
+}
+
+<div class="head head-bg">
+    <h4 class="title-in">SẢN PHẨM BÁN CHẠY</h4>
+    <div data-id="silderProduct" class="control-slider">
+        <a href="javascript:void(0);" class="prev"><span class="fa fa-angle-left"></span></a>
+        <a href="javascript:void(0);" class="next"><span class="fa fa-angle-right"></span></a>
+    </div>
+</div>
+<div class="wrap-content">
+    <div class="pro-row">
+        <div id="silderProduct" class="list-pro">
+            @*@Html.Action("SanPhamBanChayPartial", "Home")*@
+            @foreach (var item in lstSanPhamBanChay)
+            {
+                <div class="slide">
+                    <div class="product-box">
+                        <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="@Url.Content("~/res/product/" + item.ImageName)" alt="" /></span></a>
+                        <h4 class="product-name"><a href="#">@item.ProductName</a></h4>
+                        <div class="product-code">Mã số : @item.Tag</div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+<h4 class="text-uppercase title">SẢN PHẨM MỚI</h4>
+<div class="row product-tb">
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-4 element-item">
+        <div class="product-box">
+            <a href="#" class="product-img"><span class=" box-img fullbox-img cover-img"><img class="hideo" src="assets/images/product-img-1.jpg" alt="" /></span></a>
+            <h4 class="product-name"><a href="#">Giấy Dán Tường Phòng Ngủ</a></h4>
+            <div class="product-code">Mã số : PN6032</div>
+        </div>
+    </div>
+</div>
+

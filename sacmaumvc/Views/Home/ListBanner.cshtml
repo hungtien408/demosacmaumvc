@@ -1,0 +1,6 @@
+﻿@using sacmaumvc.Models;
+@model List<AdsBanner>
+@foreach (var item in Model)
+{
+    <div class="slide"><img src="@Url.Content("~/res/advertisement/" + item.FileName)" alt="" /></div>
+}
