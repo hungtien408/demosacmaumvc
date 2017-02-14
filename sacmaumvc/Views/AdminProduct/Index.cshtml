@@ -59,7 +59,8 @@
                         .Encoded(false)
                         .Sanitized(false)
                         .SetWidth(30)
-                        .RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.ProductID }));
+                        .RenderValueAs(o => Html.ActionLink("Edit", "AdminProduct", new { id = o.ProductID }))
+                        .RenderValueAs(o => Html.ActionLink("Delete", "AdminProduct", new { id = o.ProductID }));
 
                     }).WithPaging(10).Sortable(true)
 </div>

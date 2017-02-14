@@ -16,31 +16,46 @@ namespace sacmaumvc.Controllers
         {
             var ErrorCodeParam = new ObjectParameter("ErrorCode", typeof(string));
             ObjectResult<Product> query = db.ProductSelectAll(
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
                 null,
                 ErrorCodeParam);
             List<Product> listProduct = query.ToList();
             return View(listProduct);
+        }
+        public ActionResult Edit(int iProductID)
+        {
+            if (iProductID != null)
+            {
+                var ErrorCodeParam = new ObjectParameter("ErrorCode", typeof(string));
+                ObjectResult<Product> query = db.ProductSelectOne(iProductID, ErrorCodeParam);
+                List<Product> listProductEdit = query.ToList();
+                return View(listProductEdit);
+            }
+            else
+            {
+
+                return View();
+            }
         }
     }
 }
