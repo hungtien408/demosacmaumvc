@@ -3023,5 +3023,7 @@
     <FunctionImportMapping FunctionImportName="usp_WishList_Update1" FunctionName="sacmaumvcModel.Store.usp_WishList_Update1" />
     <FunctionImportMapping FunctionImportName="AdsBannerSelectAll" FunctionName="sacmaumvcModel.Store.usp_AdsBanner_SelectAll1" />
     <FunctionImportMapping FunctionImportName="ProductSelectAll" FunctionName="sacmaumvcModel.Store.usp_Product_SelectAll" />
+    <FunctionImportMapping FunctionImportName="ProductSelectOne" FunctionName="sacmaumvcModel.Store.usp_Product_SelectOne" />
+    <FunctionImportMapping FunctionImportName="ProductSelectOne1" FunctionName="sacmaumvcModel.Store.usp_Product_SelectOne" />
   </EntityContainerMapping>
 </Mapping>

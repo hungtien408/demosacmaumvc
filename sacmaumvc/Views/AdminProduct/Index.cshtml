@@ -4,52 +4,53 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layout/_LayoutAdminPage.cshtml";
-    
+
 }
 <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
 <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
 <script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")"></script>
 <script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
 @*@{
-    var grid = new WebGrid(Model, ajaxUpdateContainerId: "ajaxgrid", rowsPerPage: 2);
+        var grid = new WebGrid(Model, ajaxUpdateContainerId: "ajaxgrid", rowsPerPage: 2);
 
-    IEnumerable<WebGridColumn> cols =
-        new List<WebGridColumn> {
-                new WebGridColumn{
-                    Format = @<text>
-                        <a href='#' class="display edit-btn">Edit</a>
-                        <a href="#" class="edit save-btn">Save</a>
-                        <a href="#" class="edit
-                                      cancel-btn">Cancel</a>
-                        <a href="#" class="display
-                                      delete-btn">Delete</a>
-                    </text>
-                },
-                new WebGridColumn{
-                    Header="ID",
-                    Format = @<text>
-                        <span class="display">
-                            <label id="lblID">@item.ProductID</label>
-                        </span>
-                        <input type="text" id="inID" value="@item.ProductID"
-                               class="edit" readonly="true" />
-                    </text>
-                },
-                new WebGridColumn{
-                    Header="First Name",
-                    Format = @<text>
-                        <span class="display">
-                            <label id="lblName">@item.ProductName</label>
-                        </span>
-                        <input type="text" id="inName"
-                               value="@item.ProductName"
-                               class="edit" />
-                    </text>
-                }
-            };
-}*@
-<div class="code-cut">
-    @Html.Grid(Model).Columns(columns =>
+        IEnumerable<WebGridColumn> cols =
+            new List<WebGridColumn> {
+                    new WebGridColumn{
+                        Format = @<text>
+                            <a href='#' class="display edit-btn">Edit</a>
+                            <a href="#" class="edit save-btn">Save</a>
+                            <a href="#" class="edit
+                                          cancel-btn">Cancel</a>
+                            <a href="#" class="display
+                                          delete-btn">Delete</a>
+                        </text>
+                    },
+                    new WebGridColumn{
+                        Header="ID",
+                        Format = @<text>
+                            <span class="display">
+                                <label id="lblID">@item.ProductID</label>
+                            </span>
+                            <input type="text" id="inID" value="@item.ProductID"
+                                   class="edit" readonly="true" />
+                        </text>
+                    },
+                    new WebGridColumn{
+                        Header="First Name",
+                        Format = @<text>
+                            <span class="display">
+                                <label id="lblName">@item.ProductName</label>
+                            </span>
+                            <input type="text" id="inName"
+                                   value="@item.ProductName"
+                                   class="edit" />
+                        </text>
+                    }
+                };
+    }*@
+<div class="container">
+    <div class="wrap-grid">
+        @Html.Grid(Model).Columns(columns =>
                     {
                         columns.Add(c => c.ProductID).Titled("Product ID").Filterable(true);
                         columns.Add(c => c.ProductName).Titled("Tên sản phẩm").Filterable(true);
@@ -59,9 +60,9 @@
                         .Encoded(false)
                         .Sanitized(false)
                         .SetWidth(30)
-                        .RenderValueAs(o => Html.ActionLink("Edit", "AdminProduct", new { id = o.ProductID }))
-                        .RenderValueAs(o => Html.ActionLink("Delete", "AdminProduct", new { id = o.ProductID }));
+                        .RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { iProductID = o.ProductID }));
 
                     }).WithPaging(10).Sortable(true)
+    </div>
 </div>
-  
+

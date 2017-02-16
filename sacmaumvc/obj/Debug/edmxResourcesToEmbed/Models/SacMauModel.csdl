@@ -5364,6 +5364,14 @@
       <Parameter Name="SortByPriority" Mode="In" Type="Boolean" />
       <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="ProductSelectOne" EntitySet="Products" ReturnType="Collection(sacmaumvcModel.Product)">
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProductSelectOne1" EntitySet="Products" ReturnType="Collection(sacmaumvcModel.Product)">
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="aspnet_Membership_GetPassword_Result">
     <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />

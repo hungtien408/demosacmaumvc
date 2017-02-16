@@ -10819,6 +10819,10 @@ warning 6002: The table/view 'sacmaumvc.dbo.vw_aspnet_WebPartState_User' does no
             <Parameter Name="ProductID" Mode="In" Type="Int32" />
             <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="ProductSelectOne1" EntitySet="Products" ReturnType="Collection(sacmaumvcModel.Product)">
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="aspnet_Membership_GetPassword_Result">
           <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />
@@ -14977,6 +14981,7 @@ warning 6002: The table/view 'sacmaumvc.dbo.vw_aspnet_WebPartState_User' does no
           <FunctionImportMapping FunctionImportName="AdsBannerSelectAll" FunctionName="sacmaumvcModel.Store.usp_AdsBanner_SelectAll1" />
           <FunctionImportMapping FunctionImportName="ProductSelectAll" FunctionName="sacmaumvcModel.Store.usp_Product_SelectAll" />
           <FunctionImportMapping FunctionImportName="ProductSelectOne" FunctionName="sacmaumvcModel.Store.usp_Product_SelectOne" />
+          <FunctionImportMapping FunctionImportName="ProductSelectOne1" FunctionName="sacmaumvcModel.Store.usp_Product_SelectOne" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

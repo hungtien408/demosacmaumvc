@@ -42,20 +42,83 @@ namespace sacmaumvc.Controllers
             List<Product> listProduct = query.ToList();
             return View(listProduct);
         }
+        [HttpGet]
         public ActionResult Edit(int iProductID)
         {
-            if (iProductID != null)
+            var ErrorCodeParam = new ObjectParameter("ErrorCode", typeof(string));
+            ObjectResult<Product> query = db.ProductSelectOne(iProductID, ErrorCodeParam);
+            //List<Product> listProductEdit = query.ToList();
+            Product product = query.SingleOrDefault();
+            if (product == null)
             {
-                var ErrorCodeParam = new ObjectParameter("ErrorCode", typeof(string));
-                ObjectResult<Product> query = db.ProductSelectOne(iProductID, ErrorCodeParam);
-                List<Product> listProductEdit = query.ToList();
-                return View(listProductEdit);
+                Response.StatusCode = 404;
+                return null;
             }
-            else
-            {
+            ViewBag.CategoryID = new SelectList(db.ProductCategories.ToList().OrderBy(x => x.ProductCategoryName), "ProductCategoryID", "ProductCategoryName", product.CategoryID);
+            ObjectResult<Product> queryProduct = db.ProductSelectAll(
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                ErrorCodeParam);
+            List<Product> listProduct = queryProduct.ToList();
+            ViewBag.ListProduct = listProduct;
+            return View(product);
+        }
+        [HttpPost]
+        public ActionResult Edit(int iProductID, FormCollection f)
+        {
+            if(iProductID == 0){
+                Response.StatusCode = 404;
+                return null;
+            }
+            string MetaTittle = f["MetaTittle"].ToString();
+            string MetaDescription = "";
+            string ImageName = "";
+            string ProductName = "";
+            string ConvertedProductName = "";
+            string Description = "";
+            string Content = "";
+            string Tag = "";
+            string MetaTittleEn = "";
+            string MetaDescriptionEn = "";
+            string ProductNameEn = "";
+            string DescriptionEn = "";
+            string ContentEn = "";
+            string TagEn = "";
+            string Price = "";
+            string OtherPrice = "";
+            string SavePrice = "";
+            string Discount = "";
+            string CategoryID = "";
+            string ManufacturerID = "";
+            string OriginID = "";
+            string InStock = "";
+            string IsHot = "";
+            string IsNew = "";
+            string IsBestSeller = "";
+            string IsSafeOff = "";
 
-                return View();
-            }
+            //db.usp_Product_Update(iProductID, MetaTittle, null, null, null, null, null, null, null, null, null, null, null, null, null);
+            return RedirectToAction("Index");
         }
     }
 }

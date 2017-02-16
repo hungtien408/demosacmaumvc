@@ -11480,5 +11480,23 @@ namespace sacmaumvc.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("ProductSelectOne", mergeOption, productIDParameter, errorCode);
         }
+    
+        public virtual ObjectResult<Product> ProductSelectOne1(Nullable<int> productID, ObjectParameter errorCode)
+        {
+            var productIDParameter = productID.HasValue ?
+                new ObjectParameter("ProductID", productID) :
+                new ObjectParameter("ProductID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("ProductSelectOne1", productIDParameter, errorCode);
+        }
+    
+        public virtual ObjectResult<Product> ProductSelectOne1(Nullable<int> productID, ObjectParameter errorCode, MergeOption mergeOption)
+        {
+            var productIDParameter = productID.HasValue ?
+                new ObjectParameter("ProductID", productID) :
+                new ObjectParameter("ProductID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("ProductSelectOne1", mergeOption, productIDParameter, errorCode);
+        }
     }
 }
