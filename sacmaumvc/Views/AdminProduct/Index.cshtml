@@ -49,6 +49,9 @@
                 };
     }*@
 <div class="container">
+    <p>
+        @Html.ActionLink("Thêm mới", "Create")
+    </p>
     <div class="wrap-grid">
         @Html.Grid(Model).Columns(columns =>
                     {

@@ -28,7 +28,7 @@
                     }).WithPaging(10).Sortable(true)
     </div>
     <div class="wrap-grid">
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Edit", "AdminProduct", new { iProductID = Model.ProductID }, FormMethod.Post))
         {
             @Html.AntiForgeryToken()
 
@@ -41,8 +41,10 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.ImageName, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.ImageName, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger" })
+                        @*@Html.EditorFor(model => model.ImageName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger" })*@
+                        <input type="file" name="fileupload" />
+                        @Html.Hidden("ImageName", @Model.ImageName)
                     </div>
                 </div>
 
@@ -203,18 +205,19 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.InStock, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.InStock, new { htmlAttributes = new { @class = "form-control" } })
+                        @*@Html.EditorFor(model => model.InStock, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.CheckBoxFor(model => model.InStock.Value, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.InStock, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
-                <div class="form-group">
+                @*<div class="form-group">
                     @Html.LabelFor(model => model.Views, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.Views, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Views, "", new { @class = "text-danger" })
                     </div>
-                </div>
+                </div>*@
 
                 @*<div class="form-group">
                         @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -236,7 +239,8 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.IsHot, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.IsHot, new { htmlAttributes = new { @class = "form-control" } })
+                        @*@Html.EditorFor(model => model.IsHot, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.CheckBoxFor(model => model.IsHot.Value, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.IsHot, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -244,7 +248,8 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.IsNew, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.IsNew, new { htmlAttributes = new { @class = "form-control" } })
+                        @*@Html.EditorFor(model => model.IsNew, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.CheckBoxFor(model => model.IsNew.Value, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.IsNew, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -252,7 +257,8 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.IsBestSeller, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.IsBestSeller, new { htmlAttributes = new { @class = "form-control" } })
+                        @*@Html.EditorFor(model => model.IsBestSeller, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.CheckBoxFor(model => model.IsBestSeller.Value, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.IsBestSeller, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -260,7 +266,8 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.IsSaleOff, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.IsSaleOff, new { htmlAttributes = new { @class = "form-control" } })
+                        @*@Html.EditorFor(model => model.IsSaleOff, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.CheckBoxFor(model => model.IsSaleOff.Value, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.IsSaleOff, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -268,8 +275,18 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.IsShowOnHomePage, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.IsShowOnHomePage, new { htmlAttributes = new { @class = "form-control" } })
+                        @*@Html.EditorFor(model => model.IsShowOnHomePage, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.CheckBoxFor(model => model.IsShowOnHomePage.Value, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.IsShowOnHomePage, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsAvailable, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*@Html.EditorFor(model => model.IsAvailable, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.CheckBoxFor(model => model.IsAvailable.Value, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.IsAvailable, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -280,15 +297,6 @@
                         @Html.ValidationMessageFor(model => model.Priority, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.IsAvailable, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.IsAvailable, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.IsAvailable, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Save" class="btn btn-default" />
