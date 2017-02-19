@@ -310,6 +310,12 @@
     <Content Include="res\product\ghe-van-phong-ultrices-2.jpg" />
     <Content Include="res\product\thumbs\ghe-van-phong-ultrices-1.jpg" />
     <Content Include="res\product\thumbs\ghe-van-phong-ultrices-2.jpg" />
+    <Content Include="res\product\tranh-tre-em-115.jpg" />
+    <Content Include="res\product\tranh-tre-em-116.jpg" />
+    <Content Include="res\product\tranh-tre-em-117.jpg" />
+    <Content Include="res\product\tranh-tre-em-118.jpg" />
+    <Content Include="res\product\tranh-tre-em-119.jpg" />
+    <Content Include="res\product\tranh-tre-em-120.jpg" />
     <Content Include="res\Temp\adv-img-1.jpg" />
     <Content Include="res\userprofile\userprofile.txt" />
     <Content Include="Scripts\bootstrap.js" />
@@ -334,6 +340,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -887,6 +894,8 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\AdminProduct\Edit.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

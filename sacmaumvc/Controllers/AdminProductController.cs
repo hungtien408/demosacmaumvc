@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using sacmaumvc.Models;
 using System.Data.Entity.Core.Objects;
-using TLLib;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Drawing;
@@ -108,6 +107,7 @@ namespace sacmaumvc.Controllers
                 db.SaveChanges();
             }
             // Đưa dữ liệu vào dropdownlist
+            ViewBag.CategoryID = new SelectList(db.ProductCategories.ToList().OrderBy(x => x.ProductCategoryName), "ProductCategoryID", "ProductCategoryName", product.CategoryID);
             var ErrorCodeParam = new ObjectParameter("ErrorCode", typeof(string));
             ObjectResult<Product> queryProduct = db.ProductSelectAll(
                 null,

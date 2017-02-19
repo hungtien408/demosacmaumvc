@@ -1,0 +1,113 @@
+﻿@model IEnumerable<sacmaumvc.Models.Product>
+@using GridMvc.Html;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/_LayoutAdminPage.cshtml";
+}
+
+<h2>Index</h2>
+
+@*<div class="container">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductNameEn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ManufacturerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OriginID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsAvailable)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductNameEn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManufacturerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAvailable)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+                </td>
+            </tr>
+    }
+
+        </table>
+    </div>*@
+<div class="container">
+    <p>
+        @Html.ActionLink("Thêm mới", "Create")
+    </p>
+    <div class="wrap-grid">
+        @Html.Grid(Model).Columns(columns =>
+                    {
+                        columns.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.CheckBox("checked", false));
+                        columns.Add(c => c.ProductID).Titled("Product ID").Filterable(true);
+                        columns.Add(c => c.ProductName).Titled("Tên sản phẩm").Filterable(true);
+                        columns.Add(c => c.ProductCategory.ProductCategoryName).Titled("Danh mục").Filterable(true);
+                        columns.Add(c => c.IsAvailable).Encoded(false).Sanitized(false).SetWidth(40).RenderValueAs(o => Html.CheckBox("checked", o.IsAvailable.Value)).Titled("Hiển thị").Filterable(true);
+                        columns.Add(c => c.CreateDate).Format("{0:dd/MM/yyyy}").Titled("Ngày tạo").Filterable(true);
+                        columns.Add(c => c.ImageName).Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => @<img src="@Url.Content("~/res/product/" + o.ImageName)" width="100" height="100" />).Titled("Ảnh").Filterable(true);
+                        columns.Add()
+                        .Encoded(false)
+                        .Sanitized(false)
+                        .SetWidth(30)
+                        .RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.ProductID }));
+                        columns.Add()
+                        .Encoded(false)
+                        .Sanitized(false)
+                        .SetWidth(30)
+                        .RenderValueAs(o => Html.ActionLink("Delete", "Delete", new { id = o.ProductID }));
+
+                    }).WithPaging(10).Sortable(true)
+    </div>
+</div>
+
