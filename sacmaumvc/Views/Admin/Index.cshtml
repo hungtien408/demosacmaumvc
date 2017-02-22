@@ -5,8 +5,6 @@
     Layout = "~/Views/Layout/_LayoutAdminPage.cshtml";
 }
 
-<h2>Index</h2>
-
 @*<div class="container">
         <p>
             @Html.ActionLink("Create New", "Create")
@@ -83,10 +81,11 @@
         </table>
     </div>*@
 <div class="container">
-    <p>
-        @Html.ActionLink("Thêm mới", "Create")
-    </p>
     <div class="wrap-grid">
+        <h2>Sản Phẩm</h2>
+        <p style="margin: 20px 0;">
+            @Html.ActionLink("Thêm mới", "Create")
+        </p>
         @Html.Grid(Model).Columns(columns =>
                     {
                         columns.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.CheckBox("checked", false));

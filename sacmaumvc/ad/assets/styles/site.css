@@ -1346,3 +1346,6 @@ select{
 .form-control{
     width: 60% !important;
 }
+input[type="radio"], input[type="checkbox"] {
+    margin: 10px 0 0;    
+}
