@@ -47,6 +47,36 @@ namespace sacmaumvc.Controllers
             List<Product> listProduct = query.ToList();
             return View(listProduct);
         }
+        [HttpPost]
+        public ActionResult QuickUpdate(int[] id, string[] arrCheckAvailabel)
+        {
+            try
+            {
+                if (arrCheckAvailabel != null)
+                {
+                    for (int i = 0; i < arrCheckAvailabel.Length; i++)
+                    {
+                        Product product = new Product() { ProductID = id[i], IsAvailable = Convert.ToBoolean(arrCheckAvailabel[i].ToString()) };
+                        db.Products.Attach(product);
+                        db.Entry(product).Property(x => x.IsAvailable).IsModified = true;
+                        db.SaveChanges();
+                    }
+                }
+                return Json(new
+                {
+                    returnCode = 1,
+                    ResultMsg = "Cập nhật thành công!"
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    returnCode = 0,
+                    ResultMsg = "Cập nhật thất bại! Có lỗi xảy ra"
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
         [HttpGet]
         public ActionResult Create()
         {
@@ -93,6 +123,7 @@ namespace sacmaumvc.Controllers
                 var filename = Path.GetFileName(fileupload.FileName);
                 // insert data and insert image
                 product.ImageName = filename;
+                product.CreateDate = DateTime.Now;
                 db.Products.Add(product);
                 db.SaveChanges();
 
@@ -111,6 +142,13 @@ namespace sacmaumvc.Controllers
                 string strFullPath = "~/res/product/" + ImageName;
                 ResizeByCondition(strFullPath, 800, 800);
                 CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120);
+            }
+            else
+            {
+                product.ImageName = ImageName;
+                product.CreateDate = DateTime.Now;
+                db.Products.Add(product);
+                db.SaveChanges();
             }
             
             return RedirectToAction("Index");
@@ -190,7 +228,109 @@ namespace sacmaumvc.Controllers
             }
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public ActionResult DeleteProduct(int[] id)
+        {
+            try 
+            {
+                if (id != null)
+                {
+                    for (int i = 0; i < id.Length; i++)
+                    {
+                        int productID = id[i];
+                        var itemProduct = db.Products.Where(x => x.ProductID == productID).FirstOrDefault();
+                        var itemProductImage = db.ProductImages.Where(x => x.ProductID == productID).FirstOrDefault();
+                        if (itemProduct == null)
+                        {
+                            Response.StatusCode = 404;
+                            return null;
+                        }
+                        if (itemProductImage != null)
+                        {
+                            db.ProductImages.Remove(itemProductImage);
+                            db.SaveChanges();
+                        }
+                        db.Products.Remove(itemProduct);
+                        db.SaveChanges();
+                    }
+                }
+                return Json(new
+                {
+                    returnCode = 1,
+                    ResultMsg = "Xóa thành công " + id.Length.ToString() + " dữ liệu!"
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    returnCode = 0,
+                    ResultMsg = "Cập nhật thất bại! Có lỗi xảy ra"
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
 
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var ErrorCodeParam = new ObjectParameter("ErrorCode", typeof(string));
+            ObjectResult<Product> query = db.ProductSelectOne(id, ErrorCodeParam);
+            Product product = query.SingleOrDefault();
+            if (product == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            ViewBag.CategoryID = new SelectList(db.ProductCategories.ToList().OrderBy(x => x.ProductCategoryName), "ProductCategoryID", "ProductCategoryName", product.CategoryID);
+            ObjectResult<Product> queryProduct = db.ProductSelectAll(
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                ErrorCodeParam);
+            List<Product> listProduct = queryProduct.ToList();
+            ViewBag.ListProduct = listProduct;
+            return View(product);
+        }
+        [HttpPost, ActionName("Delete")]
+        public ActionResult XacNhanXoa(int id)
+        {
+            Product product = db.Products.SingleOrDefault(x => x.ProductID == id);
+            ProductImage productImage = db.ProductImages.Where(x => x.ProductID == id).SingleOrDefault();
+            if (product == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            if (productImage != null)
+            {
+                db.ProductImages.Remove(productImage);
+                db.SaveChanges();
+            }
+            db.Products.Remove(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        #region Common
         public static string ConvertTitle(string text)
         {
             for (int i = 33; i < 48; i++)
@@ -303,5 +443,6 @@ namespace sacmaumvc.Controllers
             newBMP.Dispose();
             objGra.Dispose();
         }
+        #endregion
     }
 }

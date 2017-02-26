@@ -102,6 +102,7 @@
     <Content Include="ad\assets\images\icon-1.png" />
     <Content Include="ad\assets\images\icon-logo.png" />
     <Content Include="ad\assets\images\icon-search.png" />
+    <Content Include="ad\assets\images\loading.gif" />
     <Content Include="ad\assets\images\logo.png" />
     <Content Include="ad\assets\images\logo2.png" />
     <Content Include="ad\assets\images\logoall.png" />
@@ -131,6 +132,7 @@
     <Content Include="ad\assets\styles\ie7.css" />
     <Content Include="ad\assets\styles\jquery.bxslider.css" />
     <Content Include="ad\assets\styles\jquery.simplyscroll.css" />
+    <Content Include="ad\assets\styles\loading-mask.css" />
     <Content Include="ad\assets\styles\nivo-slider.css" />
     <Content Include="ad\assets\styles\site-repond.css" />
     <Content Include="ad\assets\styles\site.css" />

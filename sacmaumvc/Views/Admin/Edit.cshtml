@@ -87,7 +87,7 @@
     <div class="wrap-grid">
         <h2>Sản Phẩm</h2>
         <p style="margin: 20px 0;">
-            @Html.ActionLink("Thêm mới", "Create")
+            <a href="@Url.Action("Create")"><span class="fa fa-plus"></span> Thêm mới</a>
         </p>
         @Html.Grid(listProduct).Columns(columns =>
                     {
@@ -352,7 +352,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Cập nhật" class="btn btn-default" />
+                    <input type="submit" value="Cập nhật" class="btn btn-default" /> | @Html.ActionLink("Cancel", "Index", null, htmlAttributes: new { @class = "btn btn-default" })
                 </div>
             </div>
         </div>
